@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Long Group Meeting Sep. 2017</title>
+		<title>Group Meeting Sep. 2017</title>
 
 		<link rel="stylesheet" href="../css/reveal.css">
 		<link rel="stylesheet" href="../css/theme/white.css">
@@ -166,8 +166,29 @@
 						</ul>
 				</section>
 
+				<!------------------------------------------------------------------->
+				<section>
+				    <h3>Main questions:</h3>
+						<ol>
+							<li class="fragment" data-fragment-index="1" >
+								What are the conditions under which this learning scheme works?
+						  </li>
+							<li class="fragment" data-fragment-index="2" >
+							 How can the AFP implement these conditions?
+						  </li>
+						</ol>
+				</section>
+
+				<!------------------------------------------------------------------->
+				<section>
+				    <h3>Sanity Check</h3>
+						<p>At each time bin LMAN can 'choose' between $P_\mathrm{LMAN}$ patterns:</p>
+						<p>$X_\mathrm{LMAN}=g\xi^\mu$ .</p>
+						<p>For each time bin choose the $\xi^\mu$ that minimizes the error</p>
+				</section>
 
 				<section>
+					<h3>Sanity Check</h3>
 					<div style="position:absolute;left:50%;width:50%">
 						<p>Teacher's Song</p>
 						<audio
@@ -186,6 +207,32 @@
 						</object>
 					</div>
   			</section>
+
+				<!------------------------------------------------------------------->
+				<section>
+				    <ul>
+				    	<li>
+								Fast Learning (10-100 iterations)
+							</li>
+							<li>
+								Crucial element: g (LMAN gain) is analog to learning rate:
+						  	Must start high and be reduced while learning progresses.
+							</li>
+				    </ul>
+				</section>
+				<!------------------------------------------------------------------->
+				<section>
+				    Questions:
+						What should be the sampling algorithm?
+						How many patterns are needed in LMAN.
+						
+						Predictions:
+						RA representation might change after learning.
+				</section>
+
+
+
+
 			</div>
 		</div>
 
