@@ -47,7 +47,7 @@
 						<div style='position:absolute;left:40%;width:55%'>
 							<img class="fragment" src="learning_one_day.png">
 						</div>
-						<p style='position:relative;top:460px;'>Andalman and Fee, 2009</p>
+						<p style='position:relative;top:460px;'>Tumer and Brainard, 2007; Andalman and Fee, 2009</p>
 				</section>
 
 				<!------------------------------------------------------------------->
@@ -142,7 +142,8 @@
 
 				<section>
 					<h3>Modeling AFP output and learning</h3>
-					<div style="position:absolute;left:0%;width:50%;">
+					<div class="fragment" style="position:absolute;left:0%;width:50%;">
+						<h4>Student Bird</h4>
 						<object type="image/svg+xml" data="LearningArch.svg">
 						</object>
 					</div>
@@ -166,18 +167,6 @@
 						</ul>
 				</section>
 
-				<!------------------------------------------------------------------->
-				<section>
-				    <h3>Main questions:</h3>
-						<ol>
-							<li class="fragment" data-fragment-index="1" >
-								What are the conditions under which this learning scheme works?
-						  </li>
-							<li class="fragment" data-fragment-index="2" >
-							 How can the AFP implement these conditions?
-						  </li>
-						</ol>
-				</section>
 
 				<!------------------------------------------------------------------->
 				<section>
@@ -188,7 +177,7 @@
 				</section>
 
 				<section>
-					<h3>Sanity Check</h3>
+					<h3>Good News</h3>
 					<div style="position:absolute;left:50%;width:50%">
 						<p>Teacher's Song</p>
 						<audio
@@ -218,16 +207,66 @@
 								Crucial element: g (LMAN gain) is analog to learning rate:
 						  	Must start high and be reduced while learning progresses.
 							</li>
+							<li>
+								Prediction: RA representation might drift even for adult birds.
+							</li>
 				    </ul>
 				</section>
 				<!------------------------------------------------------------------->
+				<!------------------------------------------------------------------->
 				<section>
-				    Questions:
-						What should be the sampling algorithm?
-						How many patterns are needed in LMAN.
-						
-						Predictions:
-						RA representation might change after learning.
+				   	<h3>Not so good news</h3>
+						<table class="fragment" data-fragment-index="1" style="font-size:smaller">
+							<tr>
+								<th>My Idea</th><th>Teşileanu et al. 2017</th>
+							</tr>
+							<tr class="fragment" data-fragment-index="2" >
+								<td>Binary neurons</td><td>Rate neurons</td>
+							</tr>
+							<tr class="fragment" data-fragment-index="3" >
+								<td>Discrete time Learning</td><td>Continuous time learning</td>
+							</tr>
+							<tr class="fragment" data-fragment-index="4" >
+								<td>Full front end</td><td>Simple linear readouts</td>
+							</tr>
+							<tr class="fragment" data-fragment-index="5" >
+									<td style="font-size: smaller;">$\Delta W \propto (X_\mathrm{RA}^\mathrm{HVC+LMAN}-X_\mathrm{RA}^\mathrm{HVC})X_\mathrm{HVC}$</td>
+									<td style="font-size: smaller;">$\Delta W \propto r_\mathrm{LMAN}\cdot r_\mathrm{HVC}$</td>
+							</tr>
+							<tr class="fragment" data-fragment-index="6" >
+								<td style="font-size: smaller;">$X_\mathrm{LMAN}\propto\xi^\mu,\,\Delta P(\mu)\propto(R-\bar{R})$</td>
+								<td style="font-size: smaller;">$\Delta \bar{I}_j^\mathrm{LMAN}\propto\delta I_j^\mathrm{LMAN}(R-\bar R)$</td>
+							</tr>
+
+						</table>
+				</section>
+
+				<section>
+				    <h3>Where to go from here?</h3>
+						<ul>
+							<li	 class="fragment" data-fragment-index="1" >
+								How to implement RL in AFP (Rate modulation? Action selection?
+								 Incorporate recurrent dynamics?)
+							</li>
+							<li class="fragment" data-fragment-index="2" >
+								Is this problem actually easy? (Time dependent error signal,
+								Many solutions, Small number of patterns)
+							</li>
+							<li class="fragment" data-fragment-index="3" >
+								Modifications:
+								<ul>
+									<li class="fragment" data-fragment-index="4" >
+										Global error signal (temporal credit assignment)
+									</li>
+									<li class="fragment" data-fragment-index="5" >
+										RL using tutors in deep networks
+									</li>
+								</ul>
+							</li>
+							<li class="fragment" data-fragment-index="6" >
+								Find a different project... :-)
+							</li>
+						</ul>
 				</section>
 
 
