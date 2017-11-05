@@ -1,0 +1,449 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Swartz 2017</title>
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/white.css">
+    <link rel="stylesheet" href="style.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<!----------------------- -1------------------------------------------>
+				<section>
+				    <h2>
+							E-I Balance is Required for High-Capacity, Noise-Robust
+							Neuronal Computation
+						</h2>
+						<h3>Ran Rubin</h3>
+						<p>with</p>
+						<h4>Larry Abbott & Haim Sompolinsky</h4>
+						<p>2017 Swartz Meeting, Janelia.</p>
+				</section>
+
+				<!-------------------------  2  ----------------------------------------->
+				<section>
+				    <h2>A New Balance</h2>
+						<img class=stretch src="2747960_Sunset.jpeg">
+						<aside class="notes">
+						   <ul>
+						   	<li>A new theoretical way to look at E-I balance</li>
+								<li>Unlike the E-I balance in balanced networks where the balance is a
+								phenomena of the neural dynamics of the network, here the balance arises
+								from the dynamics of synaptic plasticity.</li>
+								<li>It's not only new but also important because I hope to convince
+									you that The new balance has an important computational role:
+								Only balance weights can be robust in a noisy environment</li>
+						   </ul>
+						</aside>
+				</section>
+
+
+				<!---------------------------- 4 --------------------------------------->
+				<section>
+				    <h3>E-I Balance in Associative Memory Networks</h3>
+						<div class=fragment data-fragment-index="1" style='position:absolute;left:0%;width:100%'>
+							<object type="image/svg+xml" data="recurrent_arch.svg">
+								<param id="feed_forward" class="fragment" data-fragment-index="2">
+								<param id="perceptron_capacity" class="fragment current-visible" data-fragment-index="3">
+								<param id="E_all" class="fragment" data-fragment-index="4">
+								<param id="I_all" class="fragment" data-fragment-index="5">
+							</object>
+						</div>
+						<aside class="notes">
+						   <ul>
+						   	<li>A good way to talk about this new balance is to reexamine
+								the very well studied model for associative memory: </li>
+								<ul>
+									<li>Recurrent network of binary units with some constant
+										threshold</li>
+									<li>Asynchronous update</li>
+									<li>Memories are fixed points of the network</li>
+								</ul>
+								<li>Implementing a set of given fixed points in a network is
+									equivalent to solving a feed forward perceptron problem</li>
+								<li>We would like to see what happens in this system when
+									we separate E and I </li>
+									<li>The strategy would be to analyze the single neuron properties
+									and through that understand the implication for networks</li>
+								</ul>
+
+						</aside>
+				</section>
+
+        <!------------------------------ 5 ------------------------------------->
+        <section>
+					<h3>Balanced vs. Unbalanced Weights</h3>
+					<div style='width:100%'>
+							<object type="image/svg+xml" data="fig_bal_vs_unbal.svg">
+								<param id="g1294" class="fragment" data-fragment-index="4">
+								<param id="g1299" class="fragment" data-fragment-index="4">
+								<param id="g1284" class="fragment" data-fragment-index="2">
+								<param id="g1289" class="fragment" data-fragment-index="2">
+								<param id="g1257" class="fragment" data-fragment-index="1">
+								<param id="g1279" class="fragment" data-fragment-index="3">
+							</object>
+					</div>
+					<aside class="notes">
+						<p>Let's consider the point of view of one neuron (i) when the network
+						is at a memory state</p>
+					   <p>There are two types of synaptic weights (solutions) that can
+						 implement the desired memory states (explain types). </p>
+						 <p>What is the difference between these two types?</p>
+					</aside>
+        </section>
+
+				<!------------------------------- 6 ------------------------------------>
+				<section>
+				    <h3>Signal to Noise</h3>
+						<div style='position:absolute;left:8%;width:83%'>
+								<object type="image/svg+xml" data="fig_noise_effect_1.svg">
+									<param id="V_ub_input" class="fragment" data-fragment-index="1">
+									<param id="signal_magnitude" class="fragment" data-fragment-index="2">
+									<param id="V_b_input" class="fragment" data-fragment-index="3">
+									<param id="input_noise" class="fragment" data-fragment-index="4">
+									<param id="noise_ub_input" class="fragment" data-fragment-index="5">
+									<param id="noise_b_input" class="fragment" data-fragment-index="6">
+									<param id="output_noise" class="fragment" data-fragment-index="8">
+									<param id="noise_ub_output" class="fragment" data-fragment-index="9">
+									<param id="noise_b_output" class="fragment" data-fragment-index="10">
+								</object>
+								<div class="fragment" data-fragment-index="7" id="animate_2"></div>
+							</div>
+							<aside class="notes">
+								<ul>
+							   	<li>Now let us do a simple SNR estimation for the two types of weights.
+								 	(explain SNR)</li>
+								 	<li> After Signal: It seems that balanced weights are better. </li>
+									<li> <p>Input Noise: Maybe now it is clear why the distinction
+									wasn't made before:</p>
+									<p>People were concerned with input noise for which
+									there is no difference.</p> <p>In fact we will show that in many cases
+									the most input noise robust weights are unbalanced</p></li>
+								 	<li>Conclusion: Only balanced solutions can be robust to both input
+									 and output noise </li>
+								</ul>
+							</aside>
+				</section>
+
+				<!-------------------------------- 7 ----------------------------------->
+				<section>
+					<h4>
+					Only balanced synaptic weights can produce networks that are
+					robust to both input and output noise.
+					</h4>
+					<aside class="notes">
+					   <p>This is the main point! If you want the network to be robust to
+						 both types of noise the weights must be balanced. </p>
+						 <p>Especially when N is large since the SNR of unbalanced weights
+							 goes down with N.</p>
+					</aside>
+				</section>
+
+
+				<!-------------------------------- 9 ----------------------------------->
+				<section>
+				    <h3>Compare two associative memory networks:</h3>
+						<div class=fragment style='position:absolute;left:0%;width:50%'>
+							<p>Balanced:</p>
+							<p>Each $\mathbf{J}_i$ is balanced.</p>
+						</div>
+						<div class=fragment style='position:absolute;left:50%;width:50%'>
+							<p>Unbalanced:</p>
+							<p>Each $\mathbf{J}_i$ is unbalanced.</p>
+						</div>
+						<aside class="notes">
+						   <p> Link: How do these single neuron properties effect the network dynamics? </p>
+						</aside>
+				</section>
+
+				<!----------------------------- 10 -------------------------------------->
+				<section>
+				    <h3>Basins of Attraction</h3>
+						<div style='position:absolute;left:0%;width:100%'>
+							<object type="image/svg+xml" data="basins.svg">
+								<param id="basin_axes" class="fragment" data-fragment-index="1">
+								<param id="basins" class="fragment" data-fragment-index="2">
+							</object>
+						</div>
+				</section>
+				<!----------------------------- 11 -------------------------------------->
+				<section>
+				    <h3>Stochastic Dynamics</h3>
+						<div style='position:absolute;left:0%;width:100%'>
+							<object type="image/svg+xml" data="stochastic.svg">
+								<param id="noise_axes" class="fragment" data-fragment-index="1">
+								<param id="noise_conv" class="fragment" data-fragment-index="2">
+							</object>
+						</div>
+						<aside class="notes">
+							explain why the performance of unbalanced networks gets worse
+							when N increases
+						</aside>
+				</section>
+
+				<!-------------------------------12 ----------------------------------->
+				<section>
+				    <h3>Capacity and Robustness for Random Memory Patterns</h3>
+						<ul style="font-size: 75%">
+							<li class="fragment">
+								$P$ random memory states, $\left\{\boldsymbol{x}^\mu\right\}_{\mu=1}^P$, $x_i\in \left\{0,1\right\}$ i.d.
+							</li>
+							<li class="fragment">
+								Pattern statistics:
+								<ul>
+									<li>$\mathrm{mean}\left(x_i\right)$  given by $\bar{x}_\mathrm{exc}$ or $\bar{x}_\mathrm{inh}$</li>
+									<li>$\mathrm{std}\left(x_i\right)$ given by $\sigma_\mathrm{exc}$
+										 or $\sigma_\mathrm{inh}$</li>
+								</ul>
+							</li>
+						</ul>
+						<aside class="notes">
+						   <p> Two important questions are when do balanced solutions exist and
+							 how robust can they be? </p>
+							 <p> We can answer these questions (Using replica theory) if we
+								 assume that the memory patterns are random</p>
+							<p>explain list</p>
+							<p>The strategy would be to look at single neuron properties
+							and relate them to network properties </p>
+						</aside>
+				</section>
+
+				<!------------------------------------------------------------------->
+				<section>
+				    <h3>Gardner Theory</h3>
+						<div style='position:absolute;left:0%;width:100%'>
+							<object type="image/svg+xml" data="theory.svg">
+								<param id="integration_measure" class="fragment" data-fragment-index="1">
+								<param id="desired_state" class="fragment" data-fragment-index="3">
+								<param id="membrane_potential" class="fragment" data-fragment-index="2">
+								<param id="robustness" class="fragment" data-fragment-index="4">
+							</object>
+						</div>
+						<p class=fragment data-fragment-index="5"
+						style="position: absolute; top: 350%; left: 7%;">
+							Calculate $\left<\mathrm{ln}V_\mathrm{G}\right>$ for given $P$
+							and $\kappa_\mathrm{in}$ or $\kappa_\mathrm{out}$.
+						</p>
+				</section>
+
+						<!----------------------------14-------------------------------------->
+								<section>
+								    <h3>Single Neuron Robustness</h3>
+										<div style='position:absolute;left:0%;width:100%'>
+											<object type="image/svg+xml" data="kappa_theory.svg">
+												<param id="kappa_in" class="fragment" data-fragment-index="1">
+												<param id="kappa_out" class="fragment" data-fragment-index="2">
+												<param id="sims" class="fragment" data-fragment-index="3">
+												<param id="kappa_out_in" class="fragment" data-fragment-index="4">
+												<param id="kappa_in_out" class="fragment" data-fragment-index="5">
+											</object>
+									</div>
+								</section>
+
+
+				<!--------------------------13---------------------------------------->
+				<section>
+				    <h3>Single Neuron Capacity</h3>
+						<div style='position:absolute;left:5%;width:90%'>
+							<object type="image/svg+xml" data="capacity.svg">
+								<param id="alpha_c" class="fragment" data-fragment-index="1">
+								<param id="alpha_b" class="fragment" data-fragment-index="2">
+							</object>
+						</div>
+
+				</section>
+
+
+				<!---------------------------------15--------------------------------->
+				<section>
+				    <h3>Network Capacity</h3>
+						<div class=fragment data-fragment-index="1" style='position:absolute;left:24%;width:80%'>
+							<object type="image/svg+xml" data="recurrent_capacity.svg">
+								<param id="f_exc_08" class="fragment" data-fragment-index="2">
+								<param id="f_exc_09" class="fragment" data-fragment-index="3">
+							</object>
+						</div>
+						<div style='position:absolute;left:0%;width:25%'>
+							<div style='position:absolute;left:0%;width:90%'>
+								<object
+								type="image/svg+xml" data="kappa_out_theory.svg">
+								</object>
+							</div>
+							<div style='position:absolute;left:0%;width:100%;top:225px;'>
+								<object
+									type="image/svg+xml" data="capacity_1.svg">
+								</object>
+							</div>
+						</div>
+
+				</section>
+
+
+			<!------------------------------- 8 ------------------------------------>
+			<!------------------------------------------------------------------->
+			<section>
+				<div class="fragment" data-fragment-index="1"
+					style='position:absolute;left:0%;width:100%'>
+			    <object type="image/svg+xml" data="fig_noise_effect_2.svg">
+					</object>
+				</div>
+			</section>
+
+		  <section>
+		 		 <div style='position:absolute;left:0%;width:100%'>
+		 			 <object type="image/svg+xml" data="sufficient_cond.svg">
+		 				 <!-- <param id="condition" class="fragment" data-fragment-index="1"> -->
+		 				 <param id="outcome" class="fragment" data-fragment-index="1">
+		 			 </object>
+		 		 </div>
+		 		 <aside class="notes">
+		 			 <p>Another way of thinking about this result to see E-I balance
+		 			 as an emergent phenomena:</p>
+		 			 <p>Imagine some learning algorithm with output noise during learning.
+		 			 If the learning is successful, it means the neurons achieved high SNR and
+		 			 thus the weights are necessarily balanced.</p>
+		 		 </aside>
+		  </section>
+
+			<!------------------------------------------------------------------->
+			<section>
+			    <div style='position:absolute;left=0%;width:50%'>
+			    	<h2>New Balance</h2>
+						<img src="2747960_Sunset.jpeg">
+			    </div>
+					<div class="fragment" style='position:absolute;left:50%;width:50%'>
+			    	<h2>Old Balance</h2>
+						<img src="old_balance1.jpg" style='height:367px'>
+			    </div>
+
+			</section>
+
+			<!-------------------------------16----------------------------------->
+			<section>
+					<h3>Additional Results</h3>
+					<ul>
+						<li> Applies for neuronal selectivity (sensory processing)</li>
+						<li> Non-learned inhibition </li>
+						<li> Spiking neurons </li>
+						<li> Optimal coding theory for $f_\mathrm{exc}^\star$ </li>
+						<li> Input noise robustness (Margin) vs. Output noise robustness</li>
+						<li> Cortical firing patterns consistent with $f_\mathrm{exc}^\star>0.5$ </li>
+						<li> Relation to "classical" dynamic E-I balance </li>
+						<li> Learning algorithms (Perceptrons, Hebbian) </li>
+					</ul>
+			</section>
+
+			<!-------------------------------17----------------------------------->
+			<section>
+				<h3>Conclusions</h3>
+				<ul>
+					<li class=fragment>
+						E-I balance:  </li>
+					<ul>
+						<li class=fragment>
+							Has a critical  computational  role.</li>
+							<li class=fragment>
+								Important at the single neuron level (spiking and not spiking),
+						 	and  at  the  level  of recurrent networks.</li>
+							<li class=fragment>
+								May be a collective,
+								self-maintaining, emergent phenomena of synaptic plasticity</li>
+							</ul>
+					<li class=fragment>
+						Should apply across a variety of neuronal circuits that
+						learn in the presence of noise.</li>
+				</ul>
+
+			<aside class="notes">
+			   <ul>
+			   	<li>We  have  uncovered  a  fundamental  principle  of  neuronal
+						learning  under  basic  biological  constraints.</li>
+					<li>Any successful neuronal learning process in the presence of
+					substantial output noise will lead to strong balanced synaptic
+					efficacies  with  noise  robustness  features.</li>
+			   </ul>
+			</aside>
+			</section>
+
+
+			<!------------------------------------------------------------------->
+
+
+			</div>
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+		<script src= '../lib/js/velocity.min.js'></script>
+
+		<script>
+      // More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+        math: {
+		        mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+		          config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+	           },
+
+        viewDistance: 2,
+
+				dependencies: [
+					{ src:'../lib/js/svg.js' },
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../plugin/math/math.js', async: true }
+        ]
+			});
+			Reveal.addEventListener( 'fragmentshown', function( event ) {
+				console.log(event.fragment);
+				switch (event.fragment.getAttribute("id")) {
+					case "animate_2":
+						console.log("in animate_2 forward");
+				 		Velocity(Reveal.getCurrentSlide()
+					 		.querySelector("#input_patterns").querySelector("tspan"),
+							{y:'+=350'});
+						Velocity(Reveal.getCurrentSlide()
+					 		.querySelector("#mem_potential").querySelector("tspan"),
+							{x:'+=-200'});
+						Reveal.navigateNext()
+						break;
+				}
+			} );
+			Reveal.addEventListener( 'fragmenthidden', function( event ) {
+				console.log(event.fragment);
+				switch (event.fragment.getAttribute("id")) {
+					case "animate_2":
+							Velocity(Reveal.getCurrentSlide()
+								 .querySelector("#input_patterns").querySelector("tspan"),
+								 "reverse");
+						  Velocity(Reveal.getCurrentSlide()
+								 .querySelector("#mem_potential").querySelector("tspan"),
+								 "reverse");
+						  break;
+				}
+			} );
+		</script>
+	</body>
+</html>
