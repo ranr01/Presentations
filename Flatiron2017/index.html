@@ -348,8 +348,72 @@
 				<!------------------------------------------------------------------->
 				<section>
 				    <h3>Networks with Randomly Connected Inhibitory Population</h3>
+						<div style="position:absolute;left:0%;width:45%">
+							<object type="image/svg+xml" data="random_inh.svg">
+								<param id="J_II_out" class="fragment" data-fragment-index="1">
+								<param id="J_II" class="fragment fade-out" data-fragment-index="2">
+								<param id="J_EI_out" class="fragment" data-fragment-index="2">
+								<param id="J_EI" class="fragment fade-out" data-fragment-index="3">
+							</object>
+						</div>
+						<div style="position:absolute;left:55%;width:45%">
+							<ul style="font-size:smaller">
+								<li class="fragment" data-fragment-index="1" >
+									Random I to I connections with $\left< J_{ij} \right> = \bar{J}^\mathrm{II}$. </li>
+								<li class="fragment" data-fragment-index="2" >
+									Random E to I connections s.t. mean I activity is $m_\mathrm{I}$.
+								</li>
+							</ul>
+
+						</div>
 
 				</section>
+
+				<section>
+				    <h3>Compare two associative memory networks:</h3>
+						<div class=fragment style='position:absolute;left:0%;width:50%'>
+							<p>Balanced:</p>
+							<p>Strong I to I ($\bar{J}^\mathrm{II}\sim \frac{1}{\sqrt{N}}$);</p>
+							<p>Each $\mathbf{J}^\mathrm{E}_i$ is balanced.</p>
+						</div>
+						<div class=fragment style='position:absolute;left:50%;width:50%'>
+							<p>Unbalanced:</p>
+							<p>Weak I to I ($\bar{J}^\mathrm{II}\sim \frac{1}{N}$);</p>
+							<p> Each $\mathbf{J}^\mathrm{E}_i$ is unbalanced.</p>
+						</div>
+
+				</section>
+
+				<!------------------------------------------------------------------->
+				<section>
+				    <h3>Performance with a Random Inhibitory Network</h3>
+						<div style="position:absolute;left:0%;width:100%">
+							<object type="image/svg+xml" data="non_learned_inh_performance.svg">
+								<param id="basins_non_learned" class="fragment" data-fragment-index="1">
+								<param id="stab_non_learned" class="fragment" data-fragment-index="2">
+							</object>
+						</div>
+				</section>
+
+				<!------------------------------------------------------------------->
+				<section>
+				    <h3>Role of Inhibition</h3>
+						<div class="fragment" data-fragment-index="1"
+						 style="position:absolute;left:0%;width:100%">
+							<object type="image/svg+xml" data="shuffle_I_to_E.svg">
+							</object>
+						</div>
+
+				</section>
+
+				<!------------------------------------------------------------------->
+				<section>
+					<div style="position:absolute;left:0%;width:100%">
+						<object type="image/svg+xml" data="compare_performance.svg">
+						</object>
+					</div>
+				</section>
+
 
 			<!------------------------------- 8 ------------------------------------>
 			<!------------------------------------------------------------------->
