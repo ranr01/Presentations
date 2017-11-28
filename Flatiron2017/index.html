@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>CTRL-Labs 2017</title>
+		<title>Flatiron Institute 2017</title>
 
 		<link rel="stylesheet" href="../css/reveal.css">
 		<link rel="stylesheet" href="../css/theme/white.css">
@@ -43,7 +43,7 @@
 				  </div>
 				</section>
 				<!------------------------------------------------------------------->
-				
+
 				<section>
 
 				    <h3>Neuronal Learning in the Temporal Domain</h3>
@@ -333,6 +333,20 @@
 
 				</section>
 
+				<!------------------------------------------------------------------->
+				<section>
+				    <h3>Role of Inhibition in Associative Memory Networks</h3>
+						<div class="fragment" data-fragment-index="1"
+							style="position:absolute;left:0%;width:100%">
+							<object type="image/svg+xml" data="recurrent_arch_non_learned_inh.svg">
+								<param id="non_mem_inh" class="fragment" data-fragment-index="2">
+								<param id="non_learned_w" class="fragment" data-fragment-index="4">
+								<param id="legend_text1" class="fragment" data-fragment-index="4">
+							</object>
+						</div>
+						<div class="fragment" data-fragment-index="3" id="animate_3"></div>
+				</section>
+
 
 			<!------------------------------- 8 ------------------------------------>
 			<!------------------------------------------------------------------->
@@ -344,6 +358,7 @@
 				</div>
 			</section>
 
+			<section>
 		  <section>
 		 		 <div style='position:absolute;left:0%;width:100%'>
 		 			 <object type="image/svg+xml" data="sufficient_cond.svg">
@@ -362,6 +377,29 @@
 
 			<!------------------------------------------------------------------->
 			<section>
+					<h3>Emergence of E-I Balance</h3>
+					<div style='position:absolute;left:12.5%;width:75%'>
+						<object type="image/svg+xml" data="balance_emergence.svg">
+							<param id="axes_1" class="fragment" data-fragment-index="0">
+							<param id="legend_1" class="fragment" data-fragment-index="1">
+							<param id="error_low" class="fragment" data-fragment-index="2">
+							<param id="error_high" class="fragment" data-fragment-index="2">
+							<param id="axes_2" class="fragment" data-fragment-index="3">
+							<param id="IB_low" class="fragment" data-fragment-index="4">
+							<param id="IB_high" class="fragment" data-fragment-index="4">
+							<param id="axes_3" class="fragment" data-fragment-index="5">
+							<param id="axes_4" class="fragment" data-fragment-index="5">
+							<param id="k_in_low" class="fragment" data-fragment-index="6">
+							<param id="k_in_high" class="fragment" data-fragment-index="6">
+							<param id="k_out_low" class="fragment" data-fragment-index="7">
+							<param id="k_out_high" class="fragment" data-fragment-index="7">
+						</object>
+					</div>
+
+			</section>
+		</section>
+			<!------------------------------------------------------------------->
+			<section>
 			    <div style='position:absolute;left=0%;width:50%'>
 			    	<h2>New Balance</h2>
 						<img src="2747960_Sunset.jpeg">
@@ -372,70 +410,42 @@
 			    </div>
 
 			</section>
-
-			<!-------------------------------16----------------------------------->
 			<section>
-					<h3>Additional Results</h3>
-					<ul>
-						<li> Applies for neuronal selectivity (sensory processing)</li>
-						<li> Non-learned inhibition </li>
-						<li> Spiking neurons </li>
-						<li> Optimal coding theory for $f_\mathrm{exc}^\star$ </li>
-						<li> Input noise robustness (Margin) vs. Output noise robustness</li>
-						<li> Cortical firing patterns consistent with $f_\mathrm{exc}^\star>0.5$ </li>
-						<li> Relation to "classical" dynamic E-I balance </li>
-						<li> Learning algorithms (Perceptrons, Hebbian) </li>
-					</ul>
-			</section>
+				<section>
+					<h3>E-I Balance in Spiking Neurons</h3>
+				</section>
 
-			<!-------------------------------17----------------------------------->
 			<section>
-				<h3>Conclusions</h3>
-				<ul>
-					<li class=fragment>
-						E-I balance:  </li>
-					<ul>
-						<li class=fragment>
-							Has a critical  computational  role.</li>
-							<li class=fragment>
-								Important at the single neuron level (spiking and not spiking),
-						 	and  at  the  level  of recurrent networks.</li>
-							<li class=fragment>
-								May be a collective,
-								self-maintaining, emergent phenomena of synaptic plasticity</li>
-							</ul>
-					<li class=fragment>
-						Should apply across a variety of neuronal circuits that
-						learn in the presence of noise.</li>
-				</ul>
-
-			<aside class="notes">
-			   <ul>
-			   	<li>We  have  uncovered  a  fundamental  principle  of  neuronal
-						learning  under  basic  biological  constraints.</li>
-					<li>Any successful neuronal learning process in the presence of
-					substantial output noise will lead to strong balanced synaptic
-					efficacies  with  noise  robustness  features.</li>
-			   </ul>
-			</aside>
+					 <h3>E-I Balance in Spiking Neurons</h3>
+					 <div style='position:absolute;left:6%;width:88%'>
+						 <object type="image/svg+xml" data="fig_spiking.svg">
+							<param id="binary_neuron" class="fragment" data-fragment-index="1">
+							<param id="spiking_neuron" class="fragment" data-fragment-index="2">
+						</object>
+					</div>
 			</section>
-
 
 			<!------------------------------------------------------------------->
+			<section>
+					<h3>E-I Balance in Spiking Neurons</h3>
+					<div style='position:absolute;left:5%;width:90%'>
+						<object type="image/svg+xml" data="spiking_neurons.svg">
+							<param id="low_noise" class="fragment" data-fragment-index="1">
+							<param id="b_ln_m" class="fragment" data-fragment-index="2">
+							<param id="b_ln_p" class="fragment" data-fragment-index="3">
+							<param id="ub_ln_m" class="fragment" data-fragment-index="4">
+							<param id="ub_ln_p" class="fragment" data-fragment-index="4">
+							<param id="high_noise" class="fragment" data-fragment-index="5">
+							<param id="b_hn_m" class="fragment" data-fragment-index="5">
+							<param id="b_hn_p" class="fragment" data-fragment-index="5">
+							<param id="ub_hn_m" class="fragment" data-fragment-index="5">
+							<param id="ub_hn_p" class="fragment" data-fragment-index="5">
+						</object>
+					</div>
+			</section>
 
-							<!------------------------------------------------------------------->
-							<section>
-							    <h2>Binary Classification in the Temporal Domain</h2>
-									<div class=fragment data-fragment-index="1"
-												style='position:absolute;left:0%;width:100%'>
-										<object type="image/svg+xml" data="binary_classification.svg">
-											<param id="potential1" class="fragment" data-fragment-index="2">
-											<param id="text_plus" class="fragment" data-fragment-index="3">
-											<param id="neuron2" class="fragment" data-fragment-index="4">
-										</object>
-									</div>
-									<!--<img class="plain" src="binary_classification.svg" alt="">-->
-							</section>
+		</section>
+
 
 
 			</div>
@@ -479,7 +489,13 @@
 						Velocity(Reveal.getCurrentSlide()
 					 		.querySelector("#mem_potential").querySelector("tspan"),
 							{x:'+=-200'});
-						Reveal.navigateNext()
+						Reveal.navigateNext();
+						break;
+					case "animate_3":
+						Velocity(Reveal.getCurrentSlide()
+						 		.querySelector("#legend"),
+								{height:'+=20'});
+						Reveal.navigateNext();
 						break;
 				}
 			} );
@@ -494,6 +510,11 @@
 								 .querySelector("#mem_potential").querySelector("tspan"),
 								 "reverse");
 						  break;
+					case "animate_3":
+							Velocity(Reveal.getCurrentSlide()
+								 		.querySelector("#legend"),
+										"reverse");
+							break;
 				}
 			} );
 		</script>
