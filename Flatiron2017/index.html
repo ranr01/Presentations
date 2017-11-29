@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		
+
 		<title>Flatiron Institute 2017</title>
 
 		<link rel="stylesheet" href="../css/reveal.css">
@@ -67,7 +67,7 @@
 						<h3>Ran Rubin</h3>
 						<p>with</p>
 						<h4>Larry Abbott & Haim Sompolinsky</h4>
-						<p>CTRL-Labs, Nov. 2017</p>
+						<p>Flatiron Institute, Nov. 2017</p>
 				</section>
 
 
@@ -78,9 +78,9 @@
 						<aside class="notes">
 						   <ul>
 						   	<li>A new theoretical way to look at E-I balance</li>
-								<li>Unlike the E-I balance in balanced networks where the balance is a
-								phenomena of the neural dynamics of the network, here the balance arises
-								from the dynamics of synaptic plasticity.</li>
+								<li>We will talk about how it relates to what people usually mean
+									 when they say balanced network at the end of the talk.
+								</li>
 								<li>It's not only new but also important because I hope to convince
 									you that The new balance has an important computational role:
 								Only balance weights can be robust in a noisy environment</li>
@@ -88,11 +88,42 @@
 						</aside>
 				</section>
 
+				<!------------------------------------------------------------------->
+				<section>
+				    <h3>Associative Memory Networks</h3>
+						<div style="position:absolute;left:0%;width:70%"
+						class="fragment" data-fragment-index="1" >
+						  <object type="image/svg+xml" data="associative_memory.svg">
+								<param id="states" class="fragment" data-fragment-index="2">
+								<param id="states_legend" class="fragment" data-fragment-index="2">
+								<param id="init_1" class="fragment" data-fragment-index="3">
+								<param id="traj_1" class="fragment" data-fragment-index="4">
+								<param id="basins" class="fragment" data-fragment-index="5">
+								<param id="basins_legend" class="fragment" data-fragment-index="5">
+								<param id="init_states" class="fragment" data-fragment-index="6">
+								<param id="trajectories" class="fragment" data-fragment-index="7">
+						  </object>
+						</div>
+						<div style="position:absolute;left:70%;width:30%">
+							<p class="fragment" data-fragment-index="8" >Analysis:</p>
+							<ul style="font-size:smaller">
+								<li class="fragment" data-fragment-index="8" >
+									Capacity
+								</li>
+								<li class="fragment" data-fragment-index="9" >
+								  Size of Basins
+								</li>
+								<li class="fragment" data-fragment-index="10" >
+								  Stability/Robustness to Noise
+								</li>
+							</ul>
+
+						</div>
+				</section>
 
 				<!---------------------------- 4 --------------------------------------->
 				<section>
-				    <h3>E-I Balance in Associative Memory Networks</h3>
-						<div class=fragment data-fragment-index="1" style='position:absolute;left:0%;width:100%'>
+				    <div style='position:absolute;left:0%;width:100%;top:300%;'>
 							<object type="image/svg+xml" data="recurrent_arch.svg">
 								<param id="feed_forward" class="fragment" data-fragment-index="2">
 								<param id="perceptron_capacity" class="fragment current-visible" data-fragment-index="3">
@@ -142,6 +173,20 @@
 						 <p>What is the difference between these two types?</p>
 					</aside>
         </section>
+
+				<!------------------------------------------------------------------->
+				<section>
+				    <h3>Robustness to Noise</h3>
+						<div style="position:absolute;left:15%;width:70%"
+						class="fragment" data-fragment-index="1" >
+							<object type="image/svg+xml" data="noise_types.svg">
+								<param id="input_noise" class="fragment" data-fragment-index="2">
+								<param id="output_noise" class="fragment" data-fragment-index="3">
+								<param id="V_psp_w_noise" class="fragment" data-fragment-index="4">
+							</object>
+
+						</div>
+				</section>
 
 				<!------------------------------- 6 ------------------------------------>
 				<section>
@@ -302,6 +347,7 @@
 							<object type="image/svg+xml" data="capacity.svg">
 								<param id="alpha_c" class="fragment" data-fragment-index="1">
 								<param id="alpha_b" class="fragment" data-fragment-index="2">
+								<param id="f_exc_star" class="fragment" data-fragment-index="3">
 							</object>
 						</div>
 
@@ -360,49 +406,15 @@
 						<div style="position:absolute;left:55%;width:45%">
 							<ul style="font-size:smaller">
 								<li class="fragment" data-fragment-index="1" >
-									Random I to I connections with $\left< J_{ij} \right> = \bar{J}^\mathrm{II}$. </li>
+									Random I to I connections with $\left< J_{ij} \right> = \bar{J}^\mathrm{II}\sim\frac{1}{\sqrt{N}}$. </li>
 								<li class="fragment" data-fragment-index="2" >
 									Random E to I connections s.t. mean I activity is $m_\mathrm{I}$.
 								</li>
+								<li class="fragment" data-fragment-index="3" >
+									I network in async. state.
+								</li>
 							</ul>
 
-						</div>
-
-				</section>
-
-				<section>
-				    <h3>Compare two associative memory networks:</h3>
-						<div class=fragment style='position:absolute;left:0%;width:50%'>
-							<p>Balanced:</p>
-							<p>Strong I to I ($\bar{J}^\mathrm{II}\sim \frac{1}{\sqrt{N}}$);</p>
-							<p>Each $\mathbf{J}^\mathrm{E}_i$ is balanced.</p>
-						</div>
-						<div class=fragment style='position:absolute;left:50%;width:50%'>
-							<p>Unbalanced:</p>
-							<p>Weak I to I ($\bar{J}^\mathrm{II}\sim \frac{1}{N}$);</p>
-							<p> Each $\mathbf{J}^\mathrm{E}_i$ is unbalanced.</p>
-						</div>
-
-				</section>
-
-				<!------------------------------------------------------------------->
-				<section>
-				    <h3>Performance with a Random Inhibitory Network</h3>
-						<div style="position:absolute;left:0%;width:100%">
-							<object type="image/svg+xml" data="non_learned_inh_performance.svg">
-								<param id="basins_non_learned" class="fragment" data-fragment-index="1">
-								<param id="stab_non_learned" class="fragment" data-fragment-index="2">
-							</object>
-						</div>
-				</section>
-
-				<!------------------------------------------------------------------->
-				<section>
-				    <h3>Role of Inhibition</h3>
-						<div class="fragment" data-fragment-index="1"
-						 style="position:absolute;left:0%;width:100%">
-							<object type="image/svg+xml" data="shuffle_I_to_E.svg">
-							</object>
 						</div>
 
 				</section>
@@ -413,6 +425,16 @@
 						<object type="image/svg+xml" data="compare_performance.svg">
 						</object>
 					</div>
+				</section>
+
+				<!------------------------------------------------------------------->
+				<section>
+				    <h3>Role of Inhibition</h3>
+						<div class="fragment" data-fragment-index="1"
+						 style="position:absolute;left:0%;width:100%">
+							<object type="image/svg+xml" data="shuffle_I_to_E.svg">
+							</object>
+						</div>
 				</section>
 
 
@@ -426,8 +448,7 @@
 				</div>
 			</section>
 
-			<section>
-		  <section>
+			 <section>
 		 		 <div style='position:absolute;left:0%;width:100%'>
 		 			 <object type="image/svg+xml" data="sufficient_cond.svg">
 		 				 <!-- <param id="condition" class="fragment" data-fragment-index="1"> -->
@@ -465,7 +486,6 @@
 					</div>
 
 			</section>
-		</section>
 			<!------------------------------------------------------------------->
 			<section>
 			    <div style='position:absolute;left=0%;width:50%'>
@@ -476,8 +496,33 @@
 			    	<h2>Old Balance</h2>
 						<img src="old_balance1.jpg" style='height:367px'>
 			    </div>
-
 			</section>
+			<!------------------------------------------------------------------->
+			<section>
+				<h3>Classical Balanced Networks</h3>
+			  <div style="position:absolute;left:0%;width:50%">
+			    <img class="fragment plain" src="old_babalanced_arch.png">
+			  </div>
+			  <div style="position:absolute;left:50%;width:50%">
+					<img class="fragment plain" src="old_balanced_temporal_fluctuations.png">
+			  </div>
+				<div style="position:absolute;top:400%;left:10%">
+				<p>van Vreeswijk and Sompolinsky, Science, 1996</p>
+				</div>
+			</section>
+
+			<section>
+			    <div style='position:absolute;left=0%;width:50%'>
+			    	<h2>New Balance</h2>
+						<img src="2747960_Sunset.jpeg">
+			    </div>
+					<div style='position:absolute;left:50%;width:50%'>
+			    	<h2>Old Balance</h2>
+						<img src="old_balance1.jpg" style='height:367px'>
+			    </div>
+			</section>
+
+
 			<section>
 				<section>
 					<h3>E-I Balance in Spiking Neurons</h3>
@@ -513,7 +558,33 @@
 			</section>
 
 		</section>
+		<section>
+		<section>
+				<h3>Compare two associative memory networks:</h3>
+				<div class=fragment style='position:absolute;left:0%;width:50%'>
+					<p>Balanced:</p>
+					<p>Strong I to I ($\bar{J}^\mathrm{II}\sim \frac{1}{\sqrt{N}}$);</p>
+					<p>Each $\mathbf{J}^\mathrm{E}_i$ is balanced.</p>
+				</div>
+				<div class=fragment style='position:absolute;left:50%;width:50%'>
+					<p>Unbalanced:</p>
+					<p>Weak I to I ($\bar{J}^\mathrm{II}\sim \frac{1}{N}$);</p>
+					<p> Each $\mathbf{J}^\mathrm{E}_i$ is unbalanced.</p>
+				</div>
 
+		</section>
+
+		<!------------------------------------------------------------------->
+		<section>
+				<h3>Performance with a Random Inhibitory Network</h3>
+				<div style="position:absolute;left:0%;width:100%">
+					<object type="image/svg+xml" data="non_learned_inh_performance.svg">
+						<param id="basins_non_learned" class="fragment" data-fragment-index="1">
+						<param id="stab_non_learned" class="fragment" data-fragment-index="2">
+					</object>
+				</div>
+		</section>
+	</section>
 
 
 			</div>
@@ -529,10 +600,10 @@
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
         math: {
-		        mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js',
-							//mathjax: '../MathJax/MathJax.js',
-							//config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
-							config: 'TeX-MML-AM_CHTML-full'           
+		        //mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js',
+							mathjax: '../MathJax/MathJax.js',
+							config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+							//config: 'TeX-MML-AM_CHTML-full'
 	},
 
 			 history: true,
