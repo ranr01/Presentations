@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Swartz 2017</title>
+		<title>Seung & Lee 2018</title>
 
 		<link rel="stylesheet" href="../css/reveal.css">
 		<link rel="stylesheet" href="../css/theme/white.css">
@@ -406,10 +406,11 @@
 							config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
 	           },
 
-        viewDistance: 2,
+				history: true,
+        //viewDistance: 2,
 
 				dependencies: [
-					{ src:'../lib/js/svg.js' },
+					{ src: '../lib/js/svg.js' },
 					{ src: '../plugin/markdown/marked.js' },
 					{ src: '../plugin/markdown/markdown.js' },
 					{ src: '../plugin/notes/notes.js', async: true },
@@ -417,6 +418,7 @@
           { src: '../plugin/math/math.js', async: true }
         ]
 			});
+
 			Reveal.addEventListener( 'fragmentshown', function( event ) {
 				console.log(event.fragment);
 				switch (event.fragment.getAttribute("id")) {

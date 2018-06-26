@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Swartz 2017</title>
+		<title>Seung & Lee 2018</title>
 
 		<link rel="stylesheet" href="../css/reveal.css">
 		<link rel="stylesheet" href="../css/theme/white.css">
@@ -27,7 +27,35 @@
 		<div class="reveal">
 			<div class="slides">
 
-				<!----------------------- -1------------------------------------------>
+				<!------------------------------------------------------------------->
+				<section>
+				  <div class="fragment" data-fragment-index="1"
+					   style="position:absolute;left:0%;width:50%">
+				   	<img class="plain" src="huji2.jpg" alt="" style="width:80%">
+						<img class="plain" src="haim.jpg" alt="" style="width:50%">
+				   <h4>Haim Sompolinsky</h4>
+				  </div>
+				  <div class="fragment" data-fragment-index="2"
+					   style="position:absolute;left:50%;width:50%">
+						 <img class="plain" src="ColumbiaLogo.svg" alt="">
+						 <img class="plain" src="labbott.jpg" alt="" style="width:50%">
+						<h4>Larry Abbot</h4>
+				  </div>
+				</section>
+				<!------------------------------------------------------------------->
+
+				<section>
+				    <h3>Neuronal Learning in the Temporal Domain</h3>
+						<img src="prl.png" alt=""
+						style="width: 55%;position: absolute;left: 0%;">
+						<img src="neuron.png" alt=""
+						style="width: 55%;position: absolute;left: 0%;top: 170%;">
+						<img src="tsvm.png" alt=""
+						style="width: 40%;position: absolute;left: 60%;top: 130%;">
+				</section>
+
+
+			  <!----------------------- -1------------------------------------------>
 				<section>
 				    <h2>
 							E-I Balance is Required for High-Capacity, Noise-Robust
@@ -36,7 +64,6 @@
 						<h3>Ran Rubin</h3>
 						<p>with</p>
 						<h4>Larry Abbott & Haim Sompolinsky</h4>
-						<p>2017 Swartz Meeting, Janelia.</p>
 				</section>
 
 				<!-------------------------  2  ----------------------------------------->
@@ -406,10 +433,11 @@
 							config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
 	           },
 
-        viewDistance: 2,
+				history: true,
+        //viewDistance: 2,
 
 				dependencies: [
-					{ src:'../lib/js/svg.js' },
+					{ src: '../lib/js/svg.js' },
 					{ src: '../plugin/markdown/marked.js' },
 					{ src: '../plugin/markdown/markdown.js' },
 					{ src: '../plugin/notes/notes.js', async: true },
@@ -417,6 +445,7 @@
           { src: '../plugin/math/math.js', async: true }
         ]
 			});
+
 			Reveal.addEventListener( 'fragmentshown', function( event ) {
 				console.log(event.fragment);
 				switch (event.fragment.getAttribute("id")) {

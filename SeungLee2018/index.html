@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Swartz 2017</title>
+		<title>Seung & Lee 2018</title>
 
 		<link rel="stylesheet" href="../css/reveal.css">
 		<link rel="stylesheet" href="../css/theme/white.css">
@@ -27,7 +27,35 @@
 		<div class="reveal">
 			<div class="slides">
 
-				<!----------------------- -1------------------------------------------>
+				<!------------------------------------------------------------------->
+				<section>
+				  <div class="fragment" data-fragment-index="1"
+					   style="position:absolute;left:0%;width:50%">
+				   	<img class="plain" src="huji2.jpg" alt="" style="width:80%">
+						<img class="plain" src="haim.jpg" alt="" style="width:50%">
+				   <h4>Haim Sompolinsky</h4>
+				  </div>
+				  <div class="fragment" data-fragment-index="2"
+					   style="position:absolute;left:50%;width:50%">
+						 <img class="plain" src="ColumbiaLogo.svg" alt="">
+						 <img class="plain" src="labbott.jpg" alt="" style="width:50%">
+						<h4>Larry Abbot</h4>
+				  </div>
+				</section>
+				<!------------------------------------------------------------------->
+
+				<section>
+				    <h3>Neuronal Learning in the Temporal Domain</h3>
+						<img src="prl.png" alt=""
+						style="width: 55%;position: absolute;left: 0%;">
+						<img src="neuron.png" alt=""
+						style="width: 55%;position: absolute;left: 0%;top: 170%;">
+						<img src="tsvm.png" alt=""
+						style="width: 40%;position: absolute;left: 60%;top: 130%;">
+				</section>
+
+
+			  <!----------------------- -1------------------------------------------>
 				<section>
 				    <h2>
 							E-I Balance is Required for High-Capacity, Noise-Robust
@@ -36,7 +64,6 @@
 						<h3>Ran Rubin</h3>
 						<p>with</p>
 						<h4>Larry Abbott & Haim Sompolinsky</h4>
-						<p>2017 Swartz Meeting, Janelia.</p>
 				</section>
 
 				<!-------------------------  2  ----------------------------------------->
@@ -111,6 +138,19 @@
 					</aside>
         </section>
 
+				<!------------------------------------------------------------------->
+				<section>
+				    <h3>Robustness to Noise</h3>
+						<div style="position:absolute;left:15%;width:70%"
+						class="fragment" data-fragment-index="1" >
+							<object type="image/svg+xml" data="noise_types.svg">
+								<param id="input_noise" class="fragment" data-fragment-index="2">
+								<param id="output_noise" class="fragment" data-fragment-index="3">
+								<param id="V_psp_w_noise" class="fragment" data-fragment-index="4">
+							</object>
+
+						</div>
+				</section>
 				<!------------------------------- 6 ------------------------------------>
 				<section>
 				    <h3>Signal to Noise</h3>
@@ -227,6 +267,15 @@
 						</aside>
 				</section>
 
+				<section data-transition="slide-in fade-out">
+						<h3>Gardner Theory</h3>
+						<div style="position:absolute;left:0%;width:100%">
+							<object type="image/svg+xml" data="sol_space.svg">
+								<param id="weight_space" class="fragment" data-fragment-index="1">
+								<param id="sol_space" class="fragment" data-fragment-index="2">
+							</object>
+						</div>
+				</section>
 				<!------------------------------------------------------------------->
 				<section>
 				    <h3>Gardner Theory</h3>
@@ -334,59 +383,130 @@
 			    	<h2>Old Balance</h2>
 						<img src="old_balance1.jpg" style='height:367px'>
 			    </div>
+		<!---                    EXTRAS                   -->
 
 			</section>
-
-			<!-------------------------------16----------------------------------->
-			<section>
-					<h3>Additional Results</h3>
-					<ul>
-						<li> Applies for neuronal selectivity (sensory processing)</li>
-						<li> Non-learned inhibition </li>
-						<li> Spiking neurons </li>
-						<li> Optimal coding theory for $f_\mathrm{exc}^\star$ </li>
-						<li> Input noise robustness (Margin) vs. Output noise robustness</li>
-						<li> Cortical firing patterns consistent with $f_\mathrm{exc}^\star>0.5$ </li>
-						<li> Relation to "classical" dynamic E-I balance </li>
-						<li> Learning algorithms (Perceptrons, Hebbian) </li>
-					</ul>
-			</section>
-
-			<!-------------------------------17----------------------------------->
-			<section>
-				<h3>Conclusions</h3>
-				<ul>
-					<li class=fragment>
-						E-I balance:  </li>
-					<ul>
-						<li class=fragment>
-							Has a critical  computational  role.</li>
-							<li class=fragment>
-								Important at the single neuron level (spiking and not spiking),
-						 	and  at  the  level  of recurrent networks.</li>
-							<li class=fragment>
-								May be a collective,
-								self-maintaining, emergent phenomena of synaptic plasticity</li>
-							</ul>
-					<li class=fragment>
-						Should apply across a variety of neuronal circuits that
-						learn in the presence of noise.</li>
-				</ul>
-
-			<aside class="notes">
-			   <ul>
-			   	<li>We  have  uncovered  a  fundamental  principle  of  neuronal
-						learning  under  basic  biological  constraints.</li>
-					<li>Any successful neuronal learning process in the presence of
-					substantial output noise will lead to strong balanced synaptic
-					efficacies  with  noise  robustness  features.</li>
-			   </ul>
-			</aside>
-			</section>
-
 
 			<!------------------------------------------------------------------->
+			<section>
+					<h3>Emergence of E-I Balance</h3>
+					<div style='position:absolute;left:12.5%;width:75%'>
+						<object type="image/svg+xml" data="balance_emergence.svg">
+							<param id="axes_1" class="fragment" data-fragment-index="0">
+							<param id="legend_1" class="fragment" data-fragment-index="1">
+							<param id="error_low" class="fragment" data-fragment-index="2">
+							<param id="error_high" class="fragment" data-fragment-index="2">
+							<param id="axes_2" class="fragment" data-fragment-index="3">
+							<param id="IB_low" class="fragment" data-fragment-index="4">
+							<param id="IB_high" class="fragment" data-fragment-index="4">
+							<param id="axes_3" class="fragment" data-fragment-index="5">
+							<param id="axes_4" class="fragment" data-fragment-index="5">
+							<param id="k_in_low" class="fragment" data-fragment-index="6">
+							<param id="k_in_high" class="fragment" data-fragment-index="6">
+							<param id="k_out_low" class="fragment" data-fragment-index="7">
+							<param id="k_out_high" class="fragment" data-fragment-index="7">
+						</object>
+					</div>
 
+			</section>
+
+			<section>
+				<!------------------------------------------------------------------->
+				<section>
+						<h3>Role of Inhibition in Associative Memory Networks</h3>
+						<div class="fragment" data-fragment-index="1"
+							style="position:absolute;left:0%;width:100%">
+							<object type="image/svg+xml" data="recurrent_arch_non_learned_inh.svg">
+								<param id="non_mem_inh" class="fragment" data-fragment-index="2">
+								<param id="non_learned_w" class="fragment" data-fragment-index="4">
+								<param id="legend_text1" class="fragment" data-fragment-index="4">
+							</object>
+						</div>
+						<div class="fragment" data-fragment-index="3" id="animate_3"></div>
+				</section>
+
+				<!------------------------------------------------------------------->
+				<section>
+						<h3>Networks with Randomly Connected Inhibitory Population</h3>
+						<div style="position:absolute;left:0%;width:45%">
+							<object type="image/svg+xml" data="random_inh.svg">
+								<param id="J_II_out" class="fragment" data-fragment-index="1">
+								<param id="J_II" class="fragment fade-out" data-fragment-index="2">
+								<param id="J_EI_out" class="fragment" data-fragment-index="2">
+								<param id="J_EI" class="fragment fade-out" data-fragment-index="3">
+							</object>
+						</div>
+						<div style="position:absolute;left:55%;width:45%">
+							<ul style="font-size:smaller">
+								<li class="fragment" data-fragment-index="1" >
+									Random I to I connections with $\left< J_{ij} \right> = \bar{J}^\mathrm{II}\sim\frac{1}{\sqrt{N}}$. </li>
+								<li class="fragment" data-fragment-index="2" >
+									Random E to I connections s.t. mean I activity is $m_\mathrm{I}$.
+								</li>
+								<li class="fragment" data-fragment-index="3" >
+									I network in async. state.
+								</li>
+							</ul>
+
+						</div>
+
+				</section>
+
+				<!------------------------------------------------------------------->
+				<section>
+					<div style="position:absolute;left:0%;width:100%">
+						<object type="image/svg+xml" data="compare_performance.svg">
+						</object>
+					</div>
+				</section>
+
+				<!------------------------------------------------------------------->
+				<section>
+						<h3>Role of Inhibition</h3>
+						<div class="fragment" data-fragment-index="1"
+						 style="position:absolute;left:0%;width:100%">
+							<object type="image/svg+xml" data="shuffle_I_to_E.svg">
+							</object>
+						</div>
+				</section>
+
+			</section>
+
+			<section>
+				<section>
+					<h3>E-I Balance in Spiking Neurons</h3>
+				</section>
+
+			<section>
+					 <h3>E-I Balance in Spiking Neurons</h3>
+					 <div style='position:absolute;left:6%;width:88%'>
+						 <object type="image/svg+xml" data="fig_spiking.svg">
+							<param id="binary_neuron" class="fragment" data-fragment-index="1">
+							<param id="spiking_neuron" class="fragment" data-fragment-index="2">
+						</object>
+					</div>
+			</section>
+
+			<!------------------------------------------------------------------->
+			<section>
+					<h3>E-I Balance in Spiking Neurons</h3>
+					<div style='position:absolute;left:5%;width:90%'>
+						<object type="image/svg+xml" data="spiking_neurons.svg">
+							<param id="low_noise" class="fragment" data-fragment-index="1">
+							<param id="b_ln_m" class="fragment" data-fragment-index="2">
+							<param id="b_ln_p" class="fragment" data-fragment-index="3">
+							<param id="ub_ln_m" class="fragment" data-fragment-index="4">
+							<param id="ub_ln_p" class="fragment" data-fragment-index="4">
+							<param id="high_noise" class="fragment" data-fragment-index="5">
+							<param id="b_hn_m" class="fragment" data-fragment-index="5">
+							<param id="b_hn_p" class="fragment" data-fragment-index="5">
+							<param id="ub_hn_m" class="fragment" data-fragment-index="5">
+							<param id="ub_hn_p" class="fragment" data-fragment-index="5">
+						</object>
+					</div>
+			</section>
+
+		</section>
 
 			</div>
 		</div>
@@ -406,10 +526,11 @@
 							config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
 	           },
 
+				history: true,
         viewDistance: 2,
 
 				dependencies: [
-					{ src:'../lib/js/svg.js' },
+					{ src: '../lib/js/svg.js' },
 					{ src: '../plugin/markdown/marked.js' },
 					{ src: '../plugin/markdown/markdown.js' },
 					{ src: '../plugin/notes/notes.js', async: true },
@@ -417,6 +538,7 @@
           { src: '../plugin/math/math.js', async: true }
         ]
 			});
+
 			Reveal.addEventListener( 'fragmentshown', function( event ) {
 				console.log(event.fragment);
 				switch (event.fragment.getAttribute("id")) {
@@ -430,6 +552,12 @@
 							{x:'+=-200'});
 						Reveal.navigateNext()
 						break;
+						case "animate_3":
+							Velocity(Reveal.getCurrentSlide()
+									.querySelector("#legend"),
+									{height:'+=20'});
+							Reveal.navigateNext();
+							break;
 				}
 			} );
 			Reveal.addEventListener( 'fragmenthidden', function( event ) {
@@ -443,6 +571,11 @@
 								 .querySelector("#mem_potential").querySelector("tspan"),
 								 "reverse");
 						  break;
+					case "animate_3":
+									Velocity(Reveal.getCurrentSlide()
+										 		.querySelector("#legend"),
+												"reverse");
+									break;
 				}
 			} );
 		</script>
